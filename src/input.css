@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 10px;
+}
+
+/* From Uiverse.io by Maximinodotpy */
+.inputGroup {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 1em 0 1em 0;
+    max-width: 190px;
+    position: relative;
+}
+
+.inputGroup input {
+    font-size: 100%;
+    padding: 0.8em;
+    outline: none;
+    border: 2px solid rgb(200, 200, 200);
+    background-color: transparent;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.inputGroup label {
+    font-size: 100%;
+    position: absolute;
+    left: 0;
+    padding: 0.8em;
+    margin-left: 0.5em;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    color: rgb(100, 100, 100);
+    border-radius: 10px;
+}
+
+.inputGroup :is(input:focus, input:valid)~label {
+    transform: translateY(-50%) scale(.9);
+    margin: 0em;
+    margin-left: 1.3em;
+    padding: 0.4em;
+    background-color: #e8e8e8;
+}
+
+.inputGroup :is(input:focus, input:valid) {
+    border-color: rgb(150, 150, 200);
+}
+
+/* From Uiverse.io by arieshiphop */
+button {
+    font-size: 17px;
+    padding: 0.5em 2em;
+    border: transparent;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    background: dodgerblue;
+    color: white;
+    border-radius: 4px;
+}
+
+button:hover {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(30, 144, 255, 1) 0%, rgba(0, 212, 255, 1) 100%);
+}
+
+button:active {
+    transform: translate(0em, 0.2em);
+}
+
+.infor {
+    padding: 0.8em;
+    outline: none;
+    border: 2px solid rgb(200, 200, 200);
+    background-color: transparent;
+    border-radius: 20px;
+    width: 100%;
+}
+
+/*Xử lí các bút bài tập*/
+.bai-tap {
+    display: none;
+    /* Ẩn tất cả các bài tập ban đầu */
+}
+
+.active {
+    display: block;
+    /* Hiển thị bài tập đang được chọn */
+}
+
+.tab-button {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-right: 5px;
+}
+
+.tab-button.active {
+    background-color: #2563eb;
+    color: white;
+}
+
+.open-book::before {
+    content: "📖";
+    /* Sách mở */
+}
+
+.closed-book::before {
+    content: "📒";
+    /* Sách đóng */
+}

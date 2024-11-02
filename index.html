@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Import File Output CSS-->
+    <link rel="stylesheet" href="./src/output.css">
+    <title>Javascripts</title>
+</head>
+
+<body class="bg-blue-50 flex items-center justify-center min-h-screen">
+    <div class="flex max-w-4xl w-full bg-white rounded-lg shadow-lg overflow-hidden">
+        <!-- Sidebar Js -->
+        <div class="w-1/4 bg-gray-100 p-4">
+            <ul class="space-y-4">
+                <li>
+                    <button onclick="showBai(1)"
+                        class="tab-button w-full text-center py-2 px-4 bg-yellow-500 text-black rounded-lg hover:bg-blue-600">
+                        <span id="icon1" class="closed-book"></span>Bài
+                        1</button>
+                </li>
+                <li>
+                    <button onclick="showBai(2)"
+                        class="tab-button w-full text-center py-2 px-4 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600">
+                        <span id="icon2" class="closed-book"></span>Bài
+                        2</button>
+                </li>
+                <li>
+                    <button onclick="showBai(3)"
+                        class="tab-button w-full text-center py-2 px-4 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600">
+                        <span id="icon3" class="closed-book"></span>Bài
+                        3</button>
+                </li>
+                <li>
+                    <button onclick="showBai(4)"
+                        class="tab-button w-full text-center py-2 px-4 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600">
+                        <span id="icon4" class="closed-book"></span>Bài
+                        4</button>
+                </li>
+                <li>
+                    <button onclick="showBai(5)"
+                        class="tab-button w-full text-center py-2 px-4 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600">
+                        <span id="icon5" class="closed-book"></span>Bài
+                        5</button>
+                </li>
+            </ul>
+        </div>
+        <!-- Main Content -->
+        <!--Bài tập 1: Tính lương nhân viên-->
+        <div id="bai1" class="w-3/4 p-8 bai-tap">
+            <div class="bg-yellow-100 p-4 rounded-lg border-l-4 border-yellow-500 mb-6">
+                <p class="text-sm text-yellow-700 font-semibold">🔥[BÀI_TẬP] BÀI TẬP JS BUỔI 2 - 3 || Deadline
+                    02/11/2024🔥
+                </p>
+            </div>
+            <h1 class="text-2xl font-semibold mb-4 flex items-center">
+                <span class="text-yellow-500 text-3xl mr-2">💰</span> Tính tiền lương nhân viên
+            </h1>
+            <div class="bg-blue-100 p-4 rounded-lg mb-6">
+                <h2 class="text-lg font-semibold mb-2">💡 Gợi ý:</h2>
+                <p>Công thức: Lương = Lương 1 ngày * số ngày làm</p>
+                <p class="text-sm text-gray-600 mt-2">Kiến thức áp dụng:</p>
+                <ul class="list-disc list-inside text-sm text-gray-600">
+                    <li>Tìm tới thẻ và lấy giá trị</li>
+                    <li>Tạo hàm cơ bản</li>
+                    <li>Gắn sự kiện click cho button</li>
+                    <li>Thay đổi nội dung cho thẻ</li>
+                    <li>Xử lý load trang với button của form</li>
+                </ul>
+            </div>
+            <!--form nhập thông tin để tính tiền lương-->
+            <form id="salaryForm" class="space-y-4">
+                <div class="inputGroup">
+                    <input id="salaryOneDay" type="number" required="" autocomplete="off">
+                    <label for="Nhập lương một ngày">Nhập lương 1 ngày</label>
+                </div>
+                <div class="inputGroup">
+                    <input id="Daywork" type="number" required="" autocomplete="off">
+                    <label for="Số ngày làm">Số ngày làm</label>
+                </div>
+                <!--Nút xử lí tính tiền lương-->
+                <!--Thêm type=button, nếu không có sau khi click button tính lương mặc định form sẽ làm mới lại trang
+                làm cho kết quả biến mất nhanh chóng-->
+                <button type="button" class="button" onclick="TinhLuong()">
+                    Tính lương
+                </button>
+            </form>
+            <!-- Kết quả sẽ hiển thị ở đây -->
+            <div id="result-container">
+                <div class="mt-5 p-4 bg-green-100 rounded-lg text-green-700  font-semibold">
+                    <p>
+                        👉 Tổng lương: <span id="result"></span>
+                    </p>
+                </div>
+            </div>
+            <script src="./js/SalaryNv.js"></script>
+        </div>
+        <!--Bài tập 2: Tính giá trị trung bình của 5 số-->
+        <div id="bai2" class="w-3/4 p-8 bai-tap">
+            <div class="bg-yellow-100 p-4 rounded-lg border-l-4 border-yellow-500 mb-6">
+                <p class="text-sm text-yellow-700 font-semibold">🔥[BÀI_TẬP] BÀI TẬP JS BUỔI 2 - 3 || Deadline
+                    02/11/2024🔥
+                </p>
+            </div>
+            <h1 class="text-2xl font-semibold mb-4 flex items-center">
+                <span class="text-yellow-500 text-3xl mr-2">📚</span> Tính giá trị trung bình
+            </h1>
+            <div class="bg-blue-100 p-4 rounded-lg mb-6">
+                <h2 class="text-lg font-semibold mb-2">💡 Gợi ý:</h2>
+                <p class="text-sm text-gray-600 mt-2">Kiến thức áp dụng:</p>
+                <ul class="list-disc list-inside text-sm text-gray-600">
+                    <li>Tìm tới thẻ và lấy giá trị</li>
+                    <li>Tạo hàm cơ bản</li>
+                    <li>Gắn sự kiện click cho button</li>
+                    <li>Thay đổi nội dung cho thẻ</li>
+                    <li>Xử lý load trang với button của form</li>
+                    <li>Xử lý ép kiểu dữ liệu</li>
+                </ul>
+            </div>
+            <!--form nhập các số để tính giá trị trung bình-->
+            <form>
+                <div class="flex items-center justify-start gap-3">
+                    <div class="inputGroup">
+                        <input type="number" id="number1" required="" autocomplete="off">
+                        <label for="Nhập số thứ 1">Nhập số thứ 1</label>
+                    </div>
+                    <div class="inputGroup">
+                        <input type="number" id="number2" required="" autocomplete="off">
+                        <label for="Nhập số thứ 2">Nhập số thứ 2</label>
+                    </div>
+                    <div class="inputGroup">
+                        <input type="number" id="number3" required="" autocomplete="off">
+                        <label for="Nhập số thứ 3">Nhập số thứ 3</label>
+                    </div>
+                </div>
+                <div class="flex justify-start gap-3">
+                    <div class="inputGroup">
+                        <input type="number" id="number4" required="" autocomplete="off">
+                        <label for="Nhập số thứ 4">Nhập số thứ 4</label>
+                    </div>
+                    <div class="inputGroup">
+                        <input type="number" id="number5" required="" autocomplete="off">
+                        <label for="Nhập số thứ 5">Nhập số thứ 5</label>
+                    </div>
+                </div>
+                <!--Nút xử lí tính giá trị trung bình-->
+                <button type="button" class="button" onclick="TinhTrungBinh()"> <!--Gắn sự kiện click cho button-->
+                    Tính trung bình
+                </button>
+            </form>
+            <!--kết quả sẽ hiển thị ở đây-->
+            <div id="result-container-avg">
+                <div class="mt-5 p-4 bg-green-100 rounded-lg text-green-700 font-semibold">
+                    <p>
+                        👉 Giá trị trung bình: <span id="result-avg"></span>
+                    </p>
+                </div>
+            </div>
+            <script src="./js/Avg.js"></script>
+        </div>
+        <!--Bài tập 3: Quy đổi tiền-->
+        <div id="bai3" class="w-3/4 p-8 bai-tap">
+            <div class="bg-yellow-100 p-4 rounded-lg border-l-4 border-yellow-500 mb-6">
+                <p class="text-sm text-yellow-700 font-semibold">🔥[BÀI_TẬP] BÀI TẬP JS BUỔI 2 - 3 || Deadline
+                    02/11/2024🔥
+                </p>
+            </div>
+            <h1 class="text-2xl font-semibold mb-4 flex items-center">
+                <span class="text-yellow-500 text-3xl mr-2">💱</span> Quy đổi tiền
+            </h1>
+            <div class="bg-blue-100 p-4 rounded-lg mb-6">
+                <h2 class="text-lg font-semibold mb-2">💡 Gợi ý:</h2>
+                <p class="text-sm text-gray-600 mt-2">Kiến thức áp dụng:</p>
+                <ul class="list-disc list-inside text-sm text-gray-600">
+                    <li>Áp dụng các kiến thức như bài 1 và 2</li>
+                    <li>Giá USD mặc định 1 USD = 23500</li>
+                    <li>Có thể dùng thêm NumberFormat để số tiền hiển thị đẹp hơn: NumberFormat
+                        <br>
+                        VD: new Intl.NumberFormat('vn-VN').format(23500); => 23,500
+                    </li>
+                </ul>
+            </div>
+            <!--Nhập sô tiền USD để chuyển đổi VND-->
+            <div class="inputGroup">
+                <input type="number" id="quantityusd" required="" autocomplete="off">
+                <label for="Nhập số tiền USD">Nhập số tiền USD</label>
+            </div>
+            <!--Nút xử lí Quy đổi tiền-->
+            <button type="button" class="button" onclick="converttovnd()"> <!--Gắn sự kiện click cho button-->
+                👉 Quy đổi tiền
+            </button>
+            <!--kết quả sẽ hiển thị ở đây-->
+            <div id="result-container-vnd">
+                <div class="mt-5 p-4 bg-green-100 rounded-lg text-green-700 font-semibold">
+                    <p>
+                        👉 Số tiền: <span id="result-vnd"></span>
+                    </p>
+                </div>
+            </div>
+            <script src="./js/Vnd.js"></script>
+        </div>
+        <!--Bài tập 4: Tính diện tích, chu vi hình chữ nhật-->
+        <div id="bai4" class="w-3/4 p-8 bai-tap">
+            <div class="bg-yellow-100 p-4 rounded-lg border-l-4 border-yellow-500 mb-6">
+                <p class="text-sm text-yellow-700 font-semibold">🔥[BÀI_TẬP] BÀI TẬP JS BUỔI 2 - 3 || Deadline
+                    02/11/2024🔥
+                </p>
+            </div>
+            <h1 class="text-2xl font-semibold mb-4 flex items-center">
+                <span class="text-yellow-500 text-3xl mr-2">📏</span> Tính diện tích, chu vi hình chữ nhật
+            </h1>
+            <div class="bg-blue-100 p-4 rounded-lg mb-6">
+                <h2 class="text-lg font-semibold mb-2">💡 Gợi ý:</h2>
+                <p class="text-sm text-gray-600 mt-2">Kiến thức áp dụng:</p>
+                <ul class="list-disc list-inside text-sm text-gray-600">
+                    <li>Áp dụng các kiến thức như các bài trước</li>
+                    <li>Diện tích: dài x rộng</li>
+                    <li>Chu vi: (dài + rộng) x 2
+                    </li>
+                </ul>
+            </div>
+            <form>
+                <div class="flex items-center justify-start gap-3">
+                    <div class="inputGroup">
+                        <input type="number" id="chieudai" required="" autocomplete="off">
+                        <label for="Nhập chiều dài">Nhập chiều dài</label>
+                    </div>
+                    <div class="inputGroup">
+                        <input type="number" id="chieurong" required="" autocomplete="off">
+                        <label for="Nhập chiều rộng">Nhập chiều rộng</label>
+                    </div>
+                </div>
+                <!--Nút xử lí tính diện tích và chu vi-->
+                <button type="button" class="button" onclick="TinhDTCV()"> <!--Gắn sự kiện click cho button-->
+                    Tính
+                </button>
+            </form>
+            <!--kết quả sẽ hiển thị ở đây-->
+            <div id="result-container-dtcv">
+                <div class="mt-5 p-4 bg-green-100 rounded-lg text-green-700 font-semibold">
+                    <p>
+                        👉 Kết Quả: <span id="result-dtcv"></span>
+                    </p>
+                </div>
+            </div>
+            <script src="./js/dtcv.js"></script>
+        </div>
+        <!--Bài tập 5: Tính tổng 3 chữ số nhập vào-->
+        <div id="bai5" class="w-3/4 p-8 bai-tap">
+            <div class="bg-yellow-100 p-4 rounded-lg border-l-4 border-yellow-500 mb-6">
+                <p class="text-sm text-yellow-700 font-semibold">🔥[BÀI_TẬP] BÀI TẬP JS BUỔI 2 - 3 || Deadline
+                    02/11/2024🔥
+                </p>
+            </div>
+            <h1 class="text-2xl font-semibold mb-4 flex items-center">
+                <span class="text-yellow-500 text-3xl mr-2">🧮</span> Tính tổng 3 chữ số
+            </h1>
+            <div class="bg-blue-100 p-4 rounded-lg mb-6">
+                <h2 class="text-lg font-semibold mb-2">💡 Gợi ý:</h2>
+                <p class="text-sm text-gray-600 mt-2">Kiến thức áp dụng:</p>
+                <ul class="list-disc list-inside text-sm text-gray-600">
+                    <li>Áp dụng cách tính như demo tổng 3 số</li>
+                </ul>
+            </div>
+            <!--Nhập 3 chữ số-->
+            <div class="inputGroup">
+                <input type="number" id="threenumber" required="" autocomplete="off">
+                <label for="Nhập số tiền USD">Nhập 3 chữ số</label>
+            </div>
+            <!--Nút xử lí tính tổng 3 chữ số nhập vào-->
+            <button type="button" class="button" onclick="TinhTong3So()"> <!--Gắn sự kiện click cho button-->
+                Tính tổng
+            </button>
+            <!--kết quả sẽ hiển thị ở đây-->
+            <div id="result-container-tt">
+                <div class="mt-5 p-4 bg-green-100 rounded-lg text-green-700 font-semibold">
+                    <p>
+                        👉 Kết Quả: <span id="result-tt"></span>
+                    </p>
+                </div>
+            </div>
+            <script src="./js/tong3chuso.js"></script>
+        </div>
+    </div>
+    <script src="./js/showBai.js">
+    </script>
+</body>
+
+</html>
